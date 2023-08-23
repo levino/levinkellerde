@@ -31,7 +31,27 @@ const config = {
     defaultLocale: 'de',
     locales: ['de', 'en'],
   },
-  plugins: ['@docusaurus/plugin-ideal-image'],
+  plugins: [
+    [
+      '@docusaurus/plugin-ideal-image',
+      {
+        max: 1920,
+        min: 640,
+        steps: 4,
+      },
+    ],
+    () => ({
+      name: 'docusaurus-tailwindcss',
+      configurePostCss: (postcssOptions) => ({
+        ...postcssOptions,
+        plugins: [
+          ...postcssOptions.plugins,
+          require('tailwindcss'),
+          require('autoprefixer'),
+        ],
+      }),
+    }),
+  ],
 
   presets: [
     [

@@ -1,0 +1,46 @@
+---
+authors:
+  - name: Levin Keller
+description: Der erste Bericht aus dem Garten.
+---
+
+import hibiskus from './hibiskus.jpg'
+import wieseMitHeu from './wiese-mit-heu.jpg'
+import heutonnen from './heutonnen.jpg'
+import heutonne from './heutonne.jpg'
+import {
+  FigureCaption,
+  Figure,
+  ZoomableImage,
+} from '../../src/components/Figure'
+import flaechenkompostierungUnterBueschen from './flaechenkompostierungUnterBueschen.jpg'
+
+# Zweite Mahd
+
+<Figure caption="Die Hibiskusblüte läutet das Sommerende ein">
+  <ZoomableImage img={hibiskus} alt="Hibiskusblüte vor Lagerfeuer" />
+</Figure>
+
+Es ist Mitte August und weil ich meine Wiesenflächen abmagern will und mich für
+eine dreischürige Mahd entschieden habe, war es wieder an der Zeit zu mähen.
+
+<Figure caption="Bei der Aufnahme des Schnittguts">
+  <ZoomableImage img={wieseMitHeu} alt="Wiese mit Heu" />
+</Figure>
+<figure>
+  <div className="grid grid-rows-3 grid-flow-col gap-2 items-center">
+    <div className="row-span-3">
+      <ZoomableImage img={heutonne} />
+    </div>
+    <div>
+      <ZoomableImage img={heutonnen} />
+    </div>
+    <div>
+      <ZoomableImage img={flaechenkompostierungUnterBueschen} />
+    </div>
+    <div>
+      <ZoomableImage img={flaechenkompostierungUnterBueschen} />
+    </div>
+  </div>
+  <FigureCaption>Kompostierung des Mahdguts</FigureCaption>
+</figure>
