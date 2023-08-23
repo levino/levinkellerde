@@ -40,6 +40,7 @@ const config = {
         steps: 4,
       },
     ],
+    require.resolve('docusaurus-plugin-image-zoom'),
     () => ({
       name: 'docusaurus-tailwindcss',
       configurePostCss: (postcssOptions) => ({
@@ -120,6 +121,9 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      zoom: {
+        selector: '.markdown img',
       },
     }),
 }

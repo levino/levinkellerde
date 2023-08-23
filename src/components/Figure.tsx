@@ -1,5 +1,4 @@
 import React from 'react'
-import Zoom from 'react-medium-image-zoom'
 import Image, { Props } from '@theme/IdealImage'
 export const Figure: React.FC<React.PropsWithChildren<{ caption: string }>> = ({
   children,
@@ -18,8 +17,4 @@ export const FigureCaption: React.FC<
     {children}
   </figcaption>
 )
-export const ZoomableImage: React.FC<Props> = (props) => (
-  <Zoom>
-    <Image {...props} />
-  </Zoom>
-)
+export const ZoomableImage: React.FC<Props> = (props) => <Image {...props} />
