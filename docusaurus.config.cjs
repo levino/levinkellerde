@@ -38,6 +38,7 @@ const config = {
         max: 1920,
         min: 640,
         steps: 4,
+        disableInDev: false,
       },
     ],
     () => ({
