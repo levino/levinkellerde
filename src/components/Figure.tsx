@@ -1,6 +1,6 @@
 import React from 'react'
 import Zoom from 'react-medium-image-zoom'
-
+import classnames from 'classnames'
 export const Figure: React.FC<React.PropsWithChildren<{ caption: string }>> = ({
   children,
   caption,
@@ -26,12 +26,13 @@ export const ZoomableResponsiveImage: React.FC<{
   height: number
   alt: string
   loading: 'lazy' | 'eager'
-}> = ({ srcSet, src, width, height, loading = 'lazy', alt }) => (
+  className?: string
+}> = ({ srcSet, src, width, height, loading = 'lazy', alt, className }) => (
   <Zoom>
     <img
       alt={alt}
       loading={loading}
-      className="max-w-full h-auto"
+      className={classnames('max-w-full h-auto', className)}
       srcSet={srcSet}
       src={src}
       width={width}
