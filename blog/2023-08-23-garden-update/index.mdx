@@ -8,36 +8,64 @@ import hibiskus from './hibiskus.jpg'
 import wieseMitHeu from './wiese-mit-heu.jpg'
 import heutonnen from './heutonnen.jpg'
 import heutonne from './heutonne.jpg'
-import { FigureCaption, Figure } from '../../src/components/Figure'
-import Image from '@theme/IdealImage'
+import {
+  FigureCaption,
+  Figure,
+  ZoomableResponsiveImage,
+} from '../../src/components/Figure'
 import flaechenkompostierungUnterBueschen from './flaechenkompostierungUnterBueschen.jpg'
 
 # Zweite Mahd
 
 <Figure caption="Die Hibiskusblüte läutet das Sommerende ein">
-  <Image img={hibiskus} alt="Hibiskusblüte vor Lagerfeuer" />
+  <ZoomableResponsiveImage {...hibiskus} alt="Hibiskusblüte vor Lagerfeuer" />
 </Figure>
 
 Es ist Mitte August und weil ich meine Wiesenflächen abmagern will und mich für
 eine dreischürige Mahd entschieden habe, war es wieder an der Zeit zu mähen.
 
 <Figure caption="Bei der Aufnahme des Schnittguts">
-  <Image img={wieseMitHeu} alt="Wiese mit Heu" />
+  <ZoomableResponsiveImage {...wieseMitHeu} alt="Wiese mit Heu" />
 </Figure>
+
+Ich habe die Wiese mit der Sense gemäht, das Schnittgut einen Tag liegen lassen
+und dann zusammengesammelt und der Kompostierung zugeführt. Da in meiner Wiese
+sehr viele Ameisenhaufen sind und die Sense sofort stumpf ist, wenn man durch
+einen dieser Haufen fährt, musste ich sehr viel schleifen und die Mahd dauerte
+entsprechend länger. Das Aufsammeln des Mahdguts ging aber gut von der Hand.
+
 <figure>
   <div className="grid grid-rows-3 grid-flow-col gap-2 items-center">
     <div className="row-span-3">
-      <Image img={heutonne} />
+      <ZoomableResponsiveImage {...heutonne} alt="Drahttonne mit Heu" />
     </div>
     <div>
-      <Image img={heutonnen} />
+      <ZoomableResponsiveImage
+        {...heutonnen}
+        alt="Mehrere Drahttonnen mit Heu"
+      />
     </div>
     <div>
-      <Image img={flaechenkompostierungUnterBueschen} />
+      <ZoomableResponsiveImage
+        {...flaechenkompostierungUnterBueschen}
+        alt="Flächenkompostierung unter Büschen"
+      />
     </div>
     <div>
-      <Image img={flaechenkompostierungUnterBueschen} />
+      <ZoomableResponsiveImage {...flaechenkompostierungUnterBueschen} />
     </div>
   </div>
   <FigureCaption>Kompostierung des Mahdguts</FigureCaption>
 </figure>
+
+Wie in den Bildern zu erkennen, kompostiere ich das Mahdgut (also das
+abgeschnittene Gras) teilweise in der Fläche unter den noch frisch gepflanzten
+und entsprechend kleinen Wildsträuchern. Da ich aber mehr Mahdgut als Fläche für
+die Flächenkompostierung habe, kompostiere ich einen Großteil in Drahttonnen.
+Dafür verwende ich handelsüblichen Kaninchendraht von der Rolle, schneide mir
+Streifen von 2 oder 3m Länge und verbinde die Enden mit Bindedraht. Eine solche
+Tonne kostet etwa 10 Euro und scheint zu halten. Günstiger geht es meiner
+Meinung nach nicht und es sieht ordentlicher aus, als das Mahdgut einfach auf
+einen Haufen zu legen. Eine Verwendung des Heus als Tierfutter ist wegen der
+vielen Erde durch die Ameisenhaufen schlecht möglich und lehne ich auch aus
+Veganismus-Gründen ab.

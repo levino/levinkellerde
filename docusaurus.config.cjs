@@ -32,15 +32,36 @@ const config = {
     locales: ['de', 'en'],
   },
   plugins: [
-    [
-      '@docusaurus/plugin-ideal-image',
-      {
-        max: 1920,
-        min: 640,
-        steps: 4,
-        disableInDev: false,
-      },
-    ],
+    () => ({
+      name: 'responsive-images',
+      configureWebpack: (_, isServer) => ({
+        mergeStrategy: {
+          'module.rules': 'prepend',
+        },
+        module: {
+          rules: [
+            {
+              test: /\.(?:png|jpe?g)$/i,
+              use: [
+                {
+                  loader: require.resolve('@docusaurus/responsive-loader'),
+                  options: {
+                    // Don't emit for server-side rendering
+                    emitFile: !isServer,
+                    // eslint-disable-next-line global-require
+                    adapter: require('@docusaurus/responsive-loader/sharp'),
+                    name: 'assets/img/[name].[hash:hex:7].[width].[ext]',
+                    max: 1920,
+                    min: 640,
+                    steps: 4,
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      }),
+    }),
     () => ({
       name: 'docusaurus-tailwindcss',
       configurePostCss: (postcssOptions) => ({

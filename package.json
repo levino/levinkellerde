@@ -18,6 +18,7 @@
     "@docusaurus/core": "^2.3.1",
     "@docusaurus/plugin-ideal-image": "^2.4.1",
     "@docusaurus/preset-classic": "^2.3.1",
+    "@docusaurus/responsive-loader": "^1.7.0",
     "@mdx-js/react": "^1.6.22",
     "autoprefixer": "^10.4.15",
     "clsx": "^1.2.1",
@@ -28,6 +29,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-medium-image-zoom": "^5.1.8",
+    "responsive-loader": "^3.1.2",
+    "sharp": "^0.32.5",
     "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
