@@ -187,7 +187,7 @@ declare module 'astro:content' {
 		"docs": {
 "blog/2023-05-23-windkraft.mdx": {
 	id: "blog/2023-05-23-windkraft.mdx";
-  slug: "nachhaltige-energie";
+  slug: "blog/2023-05-23-windkraft";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
