@@ -1,4 +1,9 @@
-# Über meine Homepage
+---
+title: Über meine Homepage
+prev: false
+next: false
+tableOfContents: false
+---
 
 Ich betreibe diese Homepage aus verschiedenen Gründen, die ich hier erläutern
 möchte.

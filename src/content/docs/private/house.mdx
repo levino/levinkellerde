@@ -1,15 +1,16 @@
 ---
+title: Hausfinanzierung
 tags:
   - personal finance
+next: false
+prev: false
 ---
 
-import { Tilgungsrechner } from '@site/src/components/Tilgungsrechner'
-
-# Hausfinianzierung
+import { Tilgungsrechner } from '@components/Tilgungsrechner'
 
 ## Grundlegendes
 
-Wir wollen ein
+Wir wollen ein Strohballenhaus bauen.
 
 ## Förderprogramme
 
@@ -39,7 +40,12 @@ Links:
 
 ## Berechnung
 
-<Tilgungsrechner interestRates={{ 10: 0.001, 25: 0.0087, 35: 0.011 }} />
+<div class="not-content">
+  <Tilgungsrechner
+    interestRates={{ 10: 0.001, 25: 0.0087, 35: 0.011 }}
+    client:load
+  />
+</div>
 
 ## Hintergrund
 

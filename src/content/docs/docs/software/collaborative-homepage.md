@@ -1,4 +1,6 @@
-# Mitmach-Seite
+---
+title: Mitmach-Seite
+---
 
 Diese Homepage ist das, was ich eine "Mitmach-Seite" nenne. Was das ist und
 warum ich es so wunderbar finde, erläutere ich hier.

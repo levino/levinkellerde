@@ -2,7 +2,10 @@
 title: Mahd
 ---
 
-import { ZoomableResponsiveImage } from '@site/src/components/Figure'
+import { ZoomableResponsiveImage } from '@components/Figure'
+import zweischuerigeMahd from './assets/zweischuerige-mahd.png'
+import einschuerigeMahd from './assets/einschuerige-mahd.png'
+import dreischuerigeMahd from './assets/dreischuerige-mahd.png'
 
 Ich selbst habe lange gebraucht, bis ich verstanden habe, wie und vor allem wann
 eine Blumenwiese zu schneiden ist. Das lag meiner Meinung nach vor allem an der
@@ -38,10 +41,7 @@ Nutzwert für höhere Tiere (zum Beispiel Vögel) unterscheiden.
 
 Die gängigste Mahdmethode ist die zweischürige Mahd.
 
-<img
-  alt="Diagramm zweischürige Mahd"
-  {...require('./assets/zweischuerige-mahd.png')}
-/>
+<img alt="Diagramm zweischürige Mahd" {...zweischuerigeMahd} />
 
 Bei der zweischürigen Mahd erfolgt eine Mahd (mit Abtragen des Schnitts)
 irgendwann vor dem 15. Juli. Dieses Datum ist wichtig, denn nach dem 15. Juli
@@ -62,10 +62,7 @@ sonst nicht vorhanden wären.
 Die einschürige Mahd hat für höhere Tiere (vor allem Vögel) einen höheren
 Nutzwert. Auch die Kosten sind, durch den halbierten Arbeitsaufwand, geringer.
 
-<img
-  alt="Diagramm einschürige Mahd"
-  {...require('./assets/einschuerige-mahd.png')}
-/>
+<img alt="Diagramm einschürige Mahd" {...einschuerigeMahd} />
 
 Hier bilden sich bereits im Hochsommer ab August die Samenstände. Vögel und
 andere Tiere können sich von den Samenständen ernähren. Allerdings spricht das
@@ -88,7 +85,7 @@ Blumen.
 <ZoomableResponsiveImage
   loading="eager"
   alt="Diagramm dreischürige Mahd"
-  {...require('./assets/dreischuerige-mahd.png')}
+  {...dreischuerigeMahd}
 />
 
 Der Zeitraum für das Ausreifen der Samen im Herbst ist knapp bemessen.
