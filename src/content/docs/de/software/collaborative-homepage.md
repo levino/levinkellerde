@@ -21,7 +21,7 @@ Video-Konferenzen, Dailies oder Sprints finden nicht statt. Welche Arbeit
 gemacht wird, entscheiden die Menschen selbst, genauso wann sie diese Arbeit
 machen. Die Ergebnisse werden genutzt, wenn sie gut sind. Die Kommunikation und
 Abstimmung erfolgt öffentlich und schriftlich, meist über die Plattform
-[github](https://github.com/).
+[github](https://github.com/). Toll!
 
 Ein Beispiel für derartige Kollaboration ist mein
 [Beitrag](https://github.com/themesberg/flowbite-react/pull/730) zur Software
