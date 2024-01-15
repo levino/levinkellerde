@@ -35,5 +35,8 @@
     "patchedDependencies": {
       "util@0.12.5": "patches/util@0.12.5.patch"
     }
+  },
+  "dependencies": {
+    "astro": "^4.0.1"
   }
 }

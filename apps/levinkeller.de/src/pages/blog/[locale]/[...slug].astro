@@ -1,15 +1,14 @@
 ---
-export { getStaticPaths } from '@shipyard/blog'
-import Layout from '@/layouts/WithSidebar.astro'
+export { getStaticPaths, getLayoutProps } from '@shipyard/blog'
+import Layout from '@shipyard/base/layouts/Page.astro'
 import { TableOfContents } from '@shipyard/base/components/TableOfContents'
-import Sidebar from './_Sidebar.astro'
 
 const { entry } = Astro.props
 const { Content, headings } = await entry.render()
+const props = getLayoutProps(Astro)
 ---
 
-<Layout>
-  <Sidebar slot="sidebar" />
+<Layout {...props}>
   <div>
     <div class="prose mx-auto w-full px-8">
       <Content />
