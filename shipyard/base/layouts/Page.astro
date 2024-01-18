@@ -1,12 +1,11 @@
 ---
 import Footer from './Footer.astro'
-import { Header } from './Header.tsx'
-import '@shipyard/ui/styles/globals.css'
+import '../globals.css'
 import config from 'virtual:shipyard/config'
-import {
-  MobileSidebar,
-  type MobileSidebarProps,
-} from '../components/MobileSidebar.tsx'
+import { type MobileSidebarProps } from '../components/SidebarNavigation.tsx'
+import { GlobalDesktopNavigation } from '../components/GlobalDesktopNavigation'
+import type { NavigationTree, NavigationEntry } from '@/schemas/config'
+import { mapObjIndexed } from 'ramda'
 
 type Props = {
   frontmatter?: {
@@ -22,40 +21,45 @@ type Props = {
 const locale = Astro.currentLocale || 'de'
 const currentPath = Astro.url.pathname
 const props = Astro.props.frontmatter || Astro.props
+
+const withLocale = (locale: string) => (path: string) => `/${locale}${path}`
+const withCurrentLocale = withLocale(locale)
+const applyLocaleAndSetActive: (navigation: NavigationTree) => NavigationTree =
+  mapObjIndexed((entry: NavigationEntry) => ({
+    ...entry,
+    ...(entry.href ? { href: withCurrentLocale(entry.href) } : {}),
+    active: entry.href === currentPath,
+    ...(entry.subEntry
+      ? { subEntry: applyLocaleAndSetActive(entry.subEntry) }
+      : {}),
+  }))
+
+const navigation = applyLocaleAndSetActive(config.navigation)
 ---
 
 <html>
   <head>
     <meta charset="utf-8" />
     <title>
-      {config.title ? `Levin Keller - ${config.title}` : 'Levin Keller'}
+      {
+        config.meta.title
+          ? `Levin Keller - ${config.meta.title}`
+          : 'Levin Keller'
+      }
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <div class="relative flex min-h-screen flex-col bg-background">
-      <Header client:load locale={locale} path={currentPath} />
-      <main class="flex-1">
-        <div
-          class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-1"
-        >
-          <aside
-            class="fixed top-14 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block"
-          >
-            <MobileSidebar
-              local={props.navigation}
-              global={config.globalNavigation}
-            />
-          </aside>
-
-          <main
-            class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]"
-          >
-            <slot />
-          </main>
-        </div>
-        <Footer />
-      </main>
+    <GlobalDesktopNavigation
+      client:load
+      brand={config.brand}
+      navigation={navigation}
+    />
+    <div>
+      <div class="container prose mx-auto px-4">
+        <slot />
+      </div>
     </div>
+    <Footer />
   </body>
 </html>

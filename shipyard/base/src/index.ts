@@ -4,7 +4,7 @@ import type { Config } from './schemas/config'
 const shipyardConfigId = 'virtual:shipyard/config'
 
 const resolveId: Record<string, string | undefined> = {
-  [shipyardConfigId]: `\0${shipyardConfigId}`,
+  [shipyardConfigId]: `${shipyardConfigId}`,
 }
 
 const load = (config: Config) =>

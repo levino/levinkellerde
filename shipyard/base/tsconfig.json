@@ -3,8 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@theme/*": ["@docusaurus/theme-classic/lib/theme/*"]
+      "@/*": ["./src/*"]
     }
   }
 }

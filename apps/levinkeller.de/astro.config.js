@@ -28,24 +28,37 @@ export default defineConfig({
     }),
     mdx(),
     shipyard({
-      globalNavigation: [
-        {
+      navigation: {
+        garden: {
           label: 'Gartenplaner',
-          url: '/garden',
+          subEntry: {
+            beds: {
+              label: 'Beetplaner',
+              href: '/garden/beds',
+            },
+            plants: {
+              label: 'Pflanzen',
+              href: '/garden/plants',
+            },
+          },
         },
-        {
+        docs: {
           label: 'Docs',
-          url: '/docs',
+          href: '/docs',
         },
-        {
+        blog: {
           label: 'Blog',
-          url: '/blog',
+          href: '/blog',
         },
-        {
+        about: {
           label: 'About',
-          url: '/about',
+          href: '/about',
         },
-      ],
+      },
+      meta: {
+        title: 'Levin Keller',
+        description: 'Levins Homepage',
+      },
       brand: 'Levin Keller',
     }),
   ],

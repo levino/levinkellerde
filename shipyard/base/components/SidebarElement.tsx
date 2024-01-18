@@ -1,5 +1,3 @@
-import { Link } from './Link'
-
 export type Entry = Record<
   string,
   {
@@ -10,21 +8,21 @@ export type Entry = Record<
   }
 >
 
-export const SidebarElement = ({ entry }: { entry: Entry }) => (
-  <div className="flex flex-col text-slate-600">
-    {Object.entries(entry).map(([key, entry]) => {
-      const label = entry.label ?? key
-      return (
-        <div className="flex flex-col" key={key}>
-          <Link {...entry}>{label}</Link>
-
-          {entry.subEntry && (
-            <div className="flex flex-col pl-3">
-              <SidebarElement entry={entry.subEntry} key={key} />
-            </div>
-          )}
-        </div>
-      )
-    })}
-  </div>
-)
+export const SidebarElement = ({ entry }: { entry: Entry }) =>
+  Object.entries(entry).map(([key, entry]) => {
+    const label = entry.label ?? key
+    return (
+      <li key={key}>
+        {entry.href ? (
+          <a href={entry.href}>{label}</a>
+        ) : (
+          <span className="menu-title">{label}</span>
+        )}
+        {entry.subEntry && (
+          <ul>
+            <SidebarElement entry={entry.subEntry} key={key} />
+          </ul>
+        )}
+      </li>
+    )
+  })
