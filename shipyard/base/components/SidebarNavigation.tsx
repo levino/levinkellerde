@@ -8,7 +8,7 @@ export const SidebarNavigation: React.FC<MobileSidebarProps> = ({
   local,
   global,
 }) => (
-  <ul className="menu w-56 rounded-box bg-base-200">
+  <ul className="menu w-56 bg-base-200">
     <div className="block md:hidden">
       <li>
         <details>
@@ -16,7 +16,6 @@ export const SidebarNavigation: React.FC<MobileSidebarProps> = ({
           <SidebarElement entry={global} />
         </details>
       </li>
-
       <div className="divider my-1" />
     </div>
     <SidebarElement entry={local} />

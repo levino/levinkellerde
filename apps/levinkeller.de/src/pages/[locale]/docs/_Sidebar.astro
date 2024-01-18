@@ -5,7 +5,7 @@ import {
   type Entry,
 } from '@shipyard/base/components/LocalNavigation'
 import { path } from 'ramda'
-import { toSidebarEntries } from 'src/tools/sidebarEntries'
+import { toSidebarEntries } from '../../../../../../shipyard/docs/sidebarEntries'
 
 const docs = await getCollection('docs').then((docs) =>
   docs.map(

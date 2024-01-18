@@ -34,11 +34,19 @@ export default defineConfig({
           subEntry: {
             beds: {
               label: 'Beetplaner',
-              href: '/garden/beds',
+              href: '/garden/beds/1',
             },
             plants: {
               label: 'Pflanzen',
-              href: '/garden/plants',
+              href: '/garden/plants/1',
+            },
+            shoppinglist: {
+              label: 'Einkaufsliste',
+              href: '/garden/shopping-list',
+            },
+            sowingCalendar: {
+              label: 'Aussaatkalender',
+              href: '/garden/sowing-calendar',
             },
           },
         },
@@ -49,6 +57,10 @@ export default defineConfig({
         blog: {
           label: 'Blog',
           href: '/blog',
+        },
+        work: {
+          label: 'Work',
+          href: '/work',
         },
         about: {
           label: 'About',

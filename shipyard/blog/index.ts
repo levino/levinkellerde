@@ -1,4 +1,3 @@
-import { AstroGlobal } from 'astro'
 import { z } from 'astro/zod'
 
 export const blogSchema = z.object({
@@ -27,23 +26,3 @@ export const getStaticPaths = async () => {
     props: { entry },
   }))
 }
-
-const getNavigation = async () => ({
-  local: await getCollection<BlogData>('blog').then((collection) =>
-    collection.reduce(
-      (acc, { slug, data: { title } }, key) => ({
-        ...acc,
-        [key]: {
-          href: `/blog/${slug}`,
-          label: title,
-        },
-      }),
-      {},
-    ),
-  ),
-})
-
-const getLayoutProps = async (astro: AstroGlobal) => ({
-  navigation: await getNavigation(),
-  locale: astro.currentLocale,
-})
