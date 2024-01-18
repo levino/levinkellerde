@@ -55,7 +55,6 @@ const navigation = applyLocaleAndSetActive(config.navigation)
       <div class="drawer-content">
         <div class="flex min-h-screen flex-col">
           <GlobalDesktopNavigation
-            client:load
             brand={config.brand}
             navigation={navigation}
           />
@@ -73,7 +72,6 @@ const navigation = applyLocaleAndSetActive(config.navigation)
         ></label>
         <div>
           <SidebarNavigation
-            client:load
             global={navigation}
             local={props.sidebarNavigation || {}}
           />
