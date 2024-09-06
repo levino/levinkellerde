@@ -12,10 +12,14 @@ export default defineConfig({
   markdown: {
     rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]],
   },
+  experimental: {
+    contentLayer: true,
+  },
   i18n: {
     defaultLocale: 'de',
     locales: ['de', 'en'],
     routing: {
+      redirectToDefaultLocale: false,
       prefixDefaultLocale: true,
       strategy: 'pathname',
     },
