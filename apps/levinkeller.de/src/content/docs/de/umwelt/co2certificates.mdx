@@ -2,6 +2,10 @@
 title: CO²-Zertifikate
 ---
 
+import { CertificateTable } from '@/components/Certificates/CertificateTable'
+import { totalCertificates } from '@/components/Certificates/tools'
+import 'katex/dist/katex.min.css'
+
 # Europäische CO²-Zertifikate
 
 Seit ich in der Lage der Nation den
@@ -58,9 +62,47 @@ erfasst.
 
 ## Erzeugung der Zertifikate
 
-Zur Zeit läuft noch bis 2030 die vierte Handelsperiode.
+Jedes Jahr werden neue Zertifikate ausgegeben. Die Anzahl der neu
+ausgeschütteten Zertifikate wird jährlich reduziert. Die Formel dafür wurde das
+letzte Mal 2023
+[angepasst](https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:32023L0959).
+In der Formel spielt der duchschnittliche jährliche CO²-Ausstoß der Periode 2008
+bis 2012 in Höhe von 1.954.705.227 t CO² eine wichtige Rolle. Wir definieren für
+unten $R = 1.954.705.227$. Die Formel lautet:
+
+- 2021: 1.571.000.000 neue Zertifikate
+- 2022 bis 2023: Jedes Jahr wird die Anzahl der neuen Zertifikate um 2,2% von
+  $R$ gegenüber dem Vorjahr reduziert
+- 2024: Die Anzahl der neuen Zertifikate wird um 4,3% von $R$ **und** 90.000.000
+  gegenüber dem Vorjahr reduziert und 78.400.000 erhöht[^1]
+- 2025: Die Anzahl der neuen Zertifikate wird um 4,3% von $R$ gegenüber dem
+  Vorjahr reduziert
+- 2026: Die Anzahl der neuen Zertifikate wird um 4,3% von $R$ **und** 27.000.000
+  gegenüber dem Vorjahr reduziert
+- 2027: Die Anzahl der neuen Zertifikate wird um 4,3% von $R$ gegenüber dem
+  Vorjahr reduziert
+- ab 2028: Die Anzahl der neuen Zertifikate wird um 4,4% von $R$ gegenüber dem
+  Vorjahr reduziert
+
+Damit werden 2039 das letzte Mal neue Zertifikate ausgegeben. Bis dahin ergibt
+sich heute eine Gesamtmenge an noch auszugebenen Zertifikaten (gerechnet ab
+2024[^2]) von {totalCertificates(2024, 0)} Zertifikaten.
 
 Man kann
 [sehen](https://ec.europa.eu/clima/ets/registryHoldings.do?languageCode=en&search=Search)
 wie viele Zertifikate momentan im Umlauf sind. Heute sind es Zertifikate für den
-Ausstoß von 1.968.066.490 Tonnen CO². 2021 wurden 1.571.000.000 Zertifikate ausgegeben und es ist festgelegt, dass diese Ausgabe jährlich um 43.003.515 reduziert wird.
+Ausstoß von 1.968.066.490 Tonnen CO². Damit ergibt sich folgende Prognose[^2]
+für die noch zur Verfügung stehenden Zertifikate:
+
+<CertificateTable
+  initialCertificates={1_968_066_490}
+  startYear={2024}
+  years={17}
+/>
+
+[^1]: Die Erhöhung kommt durch die Einbindung des Seeverkehrs in das System.
+[^2]:
+    Ich konnte nicht herausfinden, ob die Zertifikate für 2024 schon ausgegeben
+    worden sind, noch ausgegeben werden oder über das ganze Jahr verteilt
+    werden. Der errechnete Wert ist in diesem Sinne eine obere Grenze für den
+    tatsächlichen Wert.
