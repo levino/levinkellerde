@@ -9,6 +9,7 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import vercel from '@astrojs/vercel/static'
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,9 +21,11 @@ export default defineConfig({
       rehypeKatex,
     ],
   },
+
   experimental: {
     contentLayer: true,
   },
+
   i18n: {
     defaultLocale: 'de',
     locales: ['de', 'en'],
@@ -35,7 +38,9 @@ export default defineConfig({
       en: 'de',
     },
   },
+
   site: 'https://www.levinkeller.de',
+
   integrations: [
     react(),
     tailwind({
@@ -92,4 +97,9 @@ export default defineConfig({
       brand: 'Levin Keller',
     }),
   ],
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
 })
