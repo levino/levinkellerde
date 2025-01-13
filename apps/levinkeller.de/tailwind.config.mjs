@@ -1,4 +1,6 @@
 import daisyui from 'daisyui'
+import path from 'node:path'
+import typography from '@tailwindcss/typography'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -19,7 +21,14 @@ export default {
   },
   content: [
     './src/**/*.{ts,tsx,md,mdx,astro}',
-    '../../shipyard/**/*.{tsx,astro}',
+    path.join(
+      path.dirname(require.resolve('@levino/shipyard-base')),
+      '**/*.{tsx,astro}',
+    ),
+    path.join(
+      path.dirname(require.resolve('@levino/shipyard-base')),
+      '**/*.{tsx,astro}',
+    ),
   ],
-  plugins: [require('@tailwindcss/typography'), daisyui],
+  plugins: [typography, daisyui],
 }

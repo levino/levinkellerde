@@ -3,7 +3,9 @@ import react from '@astrojs/react'
 import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
 import mdx from '@astrojs/mdx'
-import shipyard from '@shipyard/base'
+import shipyard from '@levino/shipyard-base'
+import shipyardDocs from '@levino/shipyard-docs'
+import shipyardBlog from '@levino/shipyard-blog'
 import rehypeSlug from 'rehype-slug'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
@@ -20,10 +22,6 @@ export default defineConfig({
       [rehypeAutolinkHeadings, { behavior: 'wrap' }],
       rehypeKatex,
     ],
-  },
-
-  experimental: {
-    contentLayer: true,
   },
 
   i18n: {
@@ -96,7 +94,10 @@ export default defineConfig({
       },
       brand: 'Levin Keller',
     }),
+    shipyardDocs(['docs']),
+    shipyardBlog(['blog']),
   ],
+
   adapter: vercel({
     webAnalytics: {
       enabled: true,

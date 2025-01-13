@@ -1,5 +1,5 @@
 ---
-layout: '@shipyard/base/layouts/Splash.astro'
+layout: '@levino/shipyard-base/layouts/Splash.astro'
 title: Kommentar zur Infoveranstaltung der Bürgernergie Leinebergland
 locale: 'de'
 prev: false
