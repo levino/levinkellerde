@@ -11,7 +11,7 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import vercel from '@astrojs/vercel/static'
+import vercel from '@astrojs/vercel'
 
 // https://astro.build/config
 export default defineConfig({

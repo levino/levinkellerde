@@ -1,6 +1,6 @@
 import { glob } from 'astro/loaders'
 import { defineCollection, z } from 'astro:content'
-import { plantsSchema } from './_plantSchema'
+import { plantsSchema } from './schema'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 

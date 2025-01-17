@@ -1,5 +1,6 @@
-import { reference, type SchemaContext, z } from 'astro:content'
-import { MONTHS_EN } from '@levino/shipyard-base/src/types'
+import { reference, type SchemaContext} from 'astro:content'
+import z from 'zod'
+import { MONTHS_EN } from '@levino/shipyard-base'
 
 const months = z.enum(MONTHS_EN)
 
