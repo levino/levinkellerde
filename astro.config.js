@@ -88,10 +88,8 @@ export default defineConfig({
           href: '/about',
         },
       },
-      meta: {
-        title: 'Levin Keller',
-        description: 'Levins Homepage',
-      },
+      title: 'Levin Keller',
+      tagline: 'Levins Homepage',
       brand: 'Levin Keller',
     }),
     shipyardDocs(['docs']),

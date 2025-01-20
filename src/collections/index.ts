@@ -1,12 +1,7 @@
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 import { defineCollection, reference, z } from 'astro:content'
 import { vegetablesSchema } from './vegetableSchema'
 import { glob } from 'astro/loaders'
 import { plantSchema } from './plantSchema'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
 
 const supplierSchema = z.object({
   name: z.string(),
