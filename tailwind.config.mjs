@@ -2,10 +2,6 @@ import daisyui from 'daisyui'
 import path from 'node:path'
 import typography from '@tailwindcss/typography'
 
-console.log({path:     path.join(
-  path.dirname(require.resolve('@levino/shipyard-base')),
-  'astro/**/*.astro',
-),})
 /** @type {import('tailwindcss').Config} */
 export default {
   theme: {
