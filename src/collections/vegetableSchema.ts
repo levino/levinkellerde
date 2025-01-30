@@ -12,5 +12,4 @@ export const vegetablesSchema = z.object({
   harvest: z.array(months),
   planting: z.array(months),
   supplier: reference('suppliers'),
-  inStock: z.boolean().default(false),
 })

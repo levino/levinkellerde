@@ -1,0 +1,15 @@
+gewuerzfenchel:
+  vegetable: gewuerzfenchel
+  inStock: true
+dill:
+  vegetable: dill
+  inStock: true
+feldsalat:
+  vegetable: feldsalat
+  inStock: true
+radicchio:
+  vegetable: radicchio
+  inStock: true
+catalogna:
+  vegetable: catalogna
+  inStock: true

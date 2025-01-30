@@ -1,6 +1,6 @@
 import { defineCollection, reference, z } from 'astro:content'
 import { vegetablesSchema } from './vegetableSchema'
-import { glob } from 'astro/loaders'
+import { file, glob } from 'astro/loaders'
 import { plantSchema } from './plantSchema'
 
 const supplierSchema = z.object({
@@ -48,5 +48,12 @@ export const collections = {
       base: './content/vegetables',
     }),
     schema: vegetablesSchema,
+  }),
+  vegetableStock: defineCollection({
+    schema: z.object({
+      vegetable: reference('vegetables'),
+      inStock: z.boolean(),
+    }),
+    loader: file('./content/vegetableStock.yaml'),
   }),
 }

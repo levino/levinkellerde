@@ -1,0 +1,15 @@
+harvest:
+  - august
+  - september
+  - october
+  - november
+  - december
+name:
+  common: Karotte
+  latin: Daucus carota
+planting:
+sowing:
+  - april
+  - may
+  - june
+supplier: reinsaat

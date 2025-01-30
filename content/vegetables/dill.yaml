@@ -1,19 +1,19 @@
 harvest:
-  - april
   - may
   - june
   - july
   - august
-inStock: true
+  - september
 name:
-  common: Gewürzfenchel
-  latin: Foeniculum vulgare
+  common: Dill
+  latin: Anethum graveolens
 planting:
   - april
   - may
   - june
 sowing:
+  - march
   - april
   - may
   - june
-supplier: sperli
+supplier: reinsaat
