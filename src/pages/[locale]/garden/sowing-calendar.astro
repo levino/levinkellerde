@@ -21,10 +21,10 @@ const vegetables = await getCollection('vegetables').then((vegetables) =>
       id,
       data: {
         sowing,
-        name: { common: name },
+        name: { de: name },
       },
-    }) => ({ sowing, name, link: `./vegetables/${id}` }),
-  ),
+    }) => ({ sowing, name, link: `./vegetables/${id}` })
+  )
 )
 
 const plants = await getCollection('plants', path(['data', 'toSow'])).then(
@@ -36,14 +36,14 @@ const plants = await getCollection('plants', path(['data', 'toSow'])).then(
           sowingTime,
           name: { latin: name },
         },
-      }) => ({ sowing: sowingTime, name, link: `./plants/${id}` }),
-    ),
+      }) => ({ sowing: sowingTime, name, link: `./plants/${id}` })
+    )
 )
 const plantsBySowingMonth = pipe(
   vegetables.concat(plants),
   map((plant) => plant.sowing.map((sowing) => ({ ...plant, sowing }))),
   flatten,
-  groupBy(prop('sowing')),
+  groupBy(prop('sowing'))
 )
 ---
 

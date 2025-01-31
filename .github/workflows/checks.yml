@@ -13,19 +13,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: denoland/setup-deno@v2
+      - uses: actions/setup-node@v4
         with:
-          deno-version: '2.0.0'
-      - run: deno lint
+          node-version: 20
+          cache: 'npm'
+      - run: npm ci
+      - run: npx eslint .
   check-format:
     name: check format
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: denoland/setup-deno@v2
+      - uses: actions/setup-node@v4
         with:
-          deno-version: '2.0.0'
-      - run: deno fmt --check
+          node-version: 20
+          cache: 'npm'
+      - run: npm ci
+      - run: npx prettier -c .
   test:
     runs-on: ubuntu-latest
     steps:

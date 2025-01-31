@@ -140,7 +140,8 @@ Ich hoffe, auch hierzu bald einen Artikel schreiben zu können.
 
 [^1]: [§1 (1) GenG](https://www.gesetze-im-internet.de/geng/__1.html)
 
-[^2]: Leider kann ich dafür keine belastbare und eindeutige Quelle anführen,
+[^2]:
+    Leider kann ich dafür keine belastbare und eindeutige Quelle anführen,
     aber nach diversen Rücksprachen mit Menschen aus Genossenschaften und
     Recherchen im Internet bin ich der Überzeugung, dass die alleinige
     Ausrichtung auf maximale Rendite einer Genossenschaft rechtswidrig ist.

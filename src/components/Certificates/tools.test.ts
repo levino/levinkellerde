@@ -10,7 +10,7 @@ describe('tools', () => {
     `(
       'In year $year there are $certificates new certificates',
       ({ year, certificates }) =>
-        expect(newCertificates(year)).toBe(certificates),
+        expect(newCertificates(year)).toBe(certificates)
     )
   })
 })

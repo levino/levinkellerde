@@ -1,0 +1,22 @@
+name:
+  latin: Zea mays
+  de: Zuckermais
+sowing:
+  - february
+  - march
+  - april
+  - may
+  - august
+  - september
+planting:
+  - february
+  - march
+  - april
+harvest:
+  - march
+  - april
+  - may
+  - september
+  - october
+  - november
+supplier: reinsaat
