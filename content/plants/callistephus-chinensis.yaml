@@ -1,28 +1,29 @@
 name:
-  latin: Echinacea-Hybride Paradiso
-  german: Hybrid-Sonnenhut (Bunte Mischung)
+  latin: Callistephus chinensis
+  german: Sommeraster
 height: 100
 soil:
   - normal
-  - moist
+  - dry
 sunExposure:
   - full
-hardiness: hardy
-spread: 50
+hardiness: tender
+germination:
+  dark: true
+  light: false
 flowerColor:
-  - white
-  - yellow
   - red
-  - pink
-  - orange
 toSow: true
 foliageColor: green
 lifecycle: perennial
+sowingTime:
+  - march
+  - april
+  - may
 sowingScheme: D
 floweringSeason:
   - july
   - august
   - september
   - october
-inStock: true
-supplier: saatgut-vielfalt
+supplier: bingenheimer

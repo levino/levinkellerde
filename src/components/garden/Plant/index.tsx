@@ -52,9 +52,9 @@ const Sun: FC<Props> = ({ plant }) => (
   </div>
 )
 
-const ExposureBadge: FC<{ sunExposure: 'full' | 'semi-shade' | 'shade' }> = ({
-  sunExposure,
-}) => {
+const ExposureBadge: FC<{
+  sunExposure: 'full' | 'semi-shade' | 'shade' | 'light-shade'
+}> = ({ sunExposure }) => {
   switch (sunExposure) {
     case 'full':
       return (
@@ -71,6 +71,12 @@ const ExposureBadge: FC<{ sunExposure: 'full' | 'semi-shade' | 'shade' }> = ({
     case 'shade':
       return (
         <div className="tooltip" data-tip="schattig">
+          <IconMoon />
+        </div>
+      )
+    case 'light-shade':
+      return (
+        <div className="tooltip" data-tip="Lichter Schatten">
           <IconMoon />
         </div>
       )

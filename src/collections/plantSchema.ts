@@ -15,7 +15,9 @@ export const plantSchema = ({ image }: SchemaContext) =>
       description: z.string().optional(),
       height: z.number(),
       soil: z.array(z.enum(['moist', 'dry', 'normal', 'wet'])),
-      sunExposure: z.array(z.enum(['full', 'semi-shade', 'shade'])),
+      sunExposure: z.array(
+        z.enum(['full', 'semi-shade', 'shade', 'light-shade'])
+      ),
       hardiness: z.enum(['hardy', 'tender']),
       spread: z.number().optional(),
       germination: z
@@ -39,10 +41,11 @@ export const plantSchema = ({ image }: SchemaContext) =>
           'violet',
           'rose',
           'black',
+          'purple',
         ])
       ),
       toSow: z.boolean().default(true),
-      foliageColor: z.enum(['green', 'red', 'silver']),
+      foliageColor: z.enum(['green', 'red', 'silver', 'gold']),
       lifecycle: z.enum(['annual', 'perennial', 'biennial', 'shrub', 'tree']),
       sowingTime: z.array(months).optional(),
       sowingScheme: z.enum(SOWING_SCHEMAS).optional(),

@@ -20,7 +20,7 @@ lifecycle: shrub
 hardiness: hardy
 spread: 100
 foliageColor: green
-supplier: baumschuleeggert
+supplier: eggert
 inStock: true
 sowingTime:
   - march
