@@ -2,6 +2,7 @@ import { defineCollection, reference, z } from 'astro:content'
 import { vegetablesSchema } from './vegetableSchema'
 import { file, glob } from 'astro/loaders'
 import { plantSchema } from './plantSchema'
+import { parse as parseYaml } from 'yaml'
 
 const supplierSchema = z.object({
   name: z.string(),
@@ -54,6 +55,13 @@ export const collections = {
       vegetable: reference('vegetables'),
       inStock: z.boolean(),
     }),
-    loader: file('./content/vegetableStock.yaml'),
+    loader: file('./content/vegetableStock.yaml', {
+      parser: (text) =>
+        Object.entries(parseYaml(text)).map(([vegetable, inStock], id) => ({
+          vegetable,
+          inStock,
+          id,
+        })),
+    }),
   }),
 }

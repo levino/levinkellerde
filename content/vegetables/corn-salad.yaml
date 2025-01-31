@@ -1,0 +1,16 @@
+harvest:
+  - january
+  - february
+  - march
+  - september
+  - october
+  - november
+  - december
+name:
+  de: Feldsalat
+  latin: Anethum graveolens
+planting:
+  - march
+sowing:
+  - august
+supplier: bingenheimer

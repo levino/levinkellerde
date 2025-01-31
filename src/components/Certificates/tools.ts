@@ -26,7 +26,7 @@ export const decreaseInNewCertificates: (year: number) => number = cond([
   [
     equals(2024),
     always(
-      DECREASE_2024 + DECREASE_OF_NEW_CERTIFICATES_PER_YEAR[2024] - SEA_TRAFFIC,
+      DECREASE_2024 + DECREASE_OF_NEW_CERTIFICATES_PER_YEAR[2024] - SEA_TRAFFIC
     ),
   ],
   [
@@ -43,13 +43,13 @@ export const newCertificates = (year: number) =>
   max(
     0,
     CERTIFICATES_PER_YEAR_2021 -
-      sumFromToWith(2021)(year)(decreaseInNewCertificates),
+      sumFromToWith(2021)(year)(decreaseInNewCertificates)
   )
 
 export const totalCertificates = (
   startYear: number,
-  startCertificates: number,
+  startCertificates: number
 ) =>
   formatNumber(
-    startCertificates + sumFromToWith(startYear)(2100)(newCertificates),
+    startCertificates + sumFromToWith(startYear)(2100)(newCertificates)
   )

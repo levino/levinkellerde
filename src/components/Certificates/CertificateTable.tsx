@@ -19,8 +19,8 @@ export const CertificateTable: React.FC<CertificateTableProps> = ({
   startYear,
   years,
 }) => (
-  <div className='not-prose h-96 overflow-x-auto'>
-    <table className='table table-pin-rows'>
+  <div className="not-prose h-96 overflow-x-auto">
+    <table className="table table-pin-rows">
       <thead>
         <tr>
           <th>Jahr</th>
@@ -40,11 +40,11 @@ export const CertificateTable: React.FC<CertificateTableProps> = ({
               <td>
                 {formatNumber(
                   initialCertificates +
-                    sumFromToWith(startYear)(year)(newCertificates),
+                    sumFromToWith(startYear)(year)(newCertificates)
                 )}
               </td>
             </tr>
-          )),
+          ))
         )}
       </tbody>
     </table>

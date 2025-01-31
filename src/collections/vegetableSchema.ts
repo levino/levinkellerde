@@ -6,10 +6,10 @@ const months = z.enum(MONTHS_EN)
 export const vegetablesSchema = z.object({
   name: z.object({
     latin: z.string(),
-    common: z.string(),
+    de: z.string(),
   }),
   sowing: z.array(months),
   harvest: z.array(months),
-  planting: z.array(months),
+  planting: z.array(months).optional(),
   supplier: reference('suppliers'),
 })

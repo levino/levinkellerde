@@ -1,6 +1,6 @@
 name:
   latin: Cynara cardunculus
-  common: Cardy
+  de: Cardy
 sowing:
   - february
   - march
@@ -9,4 +9,3 @@ planting:
 harvest:
   - october
 supplier: reinsaat
-inStock: true

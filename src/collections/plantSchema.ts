@@ -39,7 +39,7 @@ export const plantSchema = ({ image }: SchemaContext) =>
           'violet',
           'rose',
           'black',
-        ]),
+        ])
       ),
       toSow: z.boolean().default(true),
       foliageColor: z.enum(['green', 'red', 'silver']),
@@ -52,7 +52,7 @@ export const plantSchema = ({ image }: SchemaContext) =>
           z.object({
             src: image(),
             alt: z.string(),
-          }),
+          })
         )
         .optional(),
       inStock: z.boolean().default(false),
@@ -60,7 +60,7 @@ export const plantSchema = ({ image }: SchemaContext) =>
     })
     .refine(
       ({ sowingTime, sowingScheme }) => sowingTime || sowingScheme,
-      'You need to either set a `sowingTime` or a `sowingScheme`.',
+      'You need to either set a `sowingTime` or a `sowingScheme`.'
     )
     .transform(({ sowingTime, sowingScheme: sowingScheme, ...data }) => ({
       ...data,
@@ -70,7 +70,7 @@ export const plantSchema = ({ image }: SchemaContext) =>
     }))
 
 const sowingSchemeToSowingTime = (
-  sowingScheme: (typeof SOWING_SCHEMAS)[number],
+  sowingScheme: (typeof SOWING_SCHEMAS)[number]
 ): month[] => {
   switch (sowingScheme) {
     case 'A':

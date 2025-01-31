@@ -1,6 +1,6 @@
 name:
   latin: Cichorium intybus
-  common: Radicchio
+  de: Radicchio
 sowing:
   - june
   - july
@@ -11,4 +11,3 @@ harvest:
   - october
   - november
 supplier: reinsaat
-inStock: true
