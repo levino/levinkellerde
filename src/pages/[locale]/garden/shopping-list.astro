@@ -1,15 +1,15 @@
 ---
-import Layout from '@levino/shipyard-base/layouts/Page.astro'
-import type { GetStaticPaths } from 'astro'
-import { prop, groupBy, indexBy, mapObjIndexed } from 'ramda'
-import { pipe } from 'fp-ts/lib/function'
-import { getCollection } from 'astro:content'
-import { getEntry } from 'astro:content'
+import Layout from "@levino/shipyard-base/layouts/Page.astro"
+import type { GetStaticPaths } from "astro"
+import { prop, groupBy, indexBy, mapObjIndexed } from "ramda"
+import { pipe } from "fp-ts/lib/function"
+import { getCollection } from "astro:content"
+import { getEntry } from "astro:content"
 export const getStaticPaths = (() => {
   return [
     {
       params: {
-        locale: 'de',
+        locale: "de",
       },
     },
   ]
@@ -18,7 +18,7 @@ export const getStaticPaths = (() => {
 const outOfStock = ({ data: { inStock } }: { data: { inStock: boolean } }) =>
   !inStock
 
-const plants = await getCollection('plantStock', outOfStock)
+const plants = await getCollection("plantStock", outOfStock)
   .then((plants) =>
     plants.map(({ data: { plant } }) =>
       getEntry(plant).then(
@@ -28,13 +28,13 @@ const plants = await getCollection('plantStock', outOfStock)
             supplier: { id: supplierId },
             name: { german: name },
           },
-        }) => ({ supplierId, name, link: `./plants/${id}` })
-      )
-    )
+        }) => ({ supplierId, name, link: `./plants/${id}` }),
+      ),
+    ),
   )
   .then((promises) => Promise.all(promises))
 
-const vegetables = await getCollection('vegetableStock', outOfStock)
+const vegetables = await getCollection("vegetableStock", outOfStock)
   .then((plants) =>
     plants.map(({ data: { vegetable } }) =>
       getEntry(vegetable).then(
@@ -44,20 +44,20 @@ const vegetables = await getCollection('vegetableStock', outOfStock)
             supplier: { id: supplierId },
             name: { de: name },
           },
-        }) => ({ supplierId, name, link: `./plants/${id}` })
-      )
-    )
+        }) => ({ supplierId, name, link: `./plants/${id}` }),
+      ),
+    ),
   )
   .then((promises) => Promise.all(promises))
 
-const suppliers = await getCollection('suppliers').then(indexBy(prop('id')))
+const suppliers = await getCollection("suppliers").then(indexBy(prop("id")))
 const vegBySupplier = pipe(
   vegetables.concat(plants),
-  groupBy(prop('supplierId')),
+  groupBy(prop("supplierId")),
   mapObjIndexed((vegetables, supplierId) => ({
     supplierName: suppliers[supplierId].data.name,
     vegetables,
-  }))
+  })),
 )
 ---
 

@@ -1,6 +1,6 @@
-import { type CollectionEntry } from 'astro:content'
-import { MONTHS_DE, MONTHS_EN } from '@levino/shipyard-base'
-import type { FC, PropsWithChildren } from 'react'
+import { type CollectionEntry } from "astro:content"
+import { MONTHS_DE, MONTHS_EN } from "@levino/shipyard-base"
+import type { FC, PropsWithChildren } from "react"
 import {
   IconCactus,
   IconDroplet,
@@ -11,8 +11,8 @@ import {
   IconSeeding,
   IconSun,
   IconSunMoon,
-} from '@tabler/icons-react'
-type Props = { plant: CollectionEntry<'plants'> }
+} from "@tabler/icons-react"
+type Props = { plant: CollectionEntry<"plants"> }
 
 export const Plant: FC<PropsWithChildren<Props>> = ({ plant, children }) => (
   <div className="py-4">
@@ -52,25 +52,31 @@ const Sun: FC<Props> = ({ plant }) => (
   </div>
 )
 
-const ExposureBadge: FC<{ sunExposure: 'full' | 'semi-shade' | 'shade' }> = ({
-  sunExposure,
-}) => {
+const ExposureBadge: FC<{
+  sunExposure: "full" | "semi-shade" | "shade" | "light-shade"
+}> = ({ sunExposure }) => {
   switch (sunExposure) {
-    case 'full':
+    case "full":
       return (
         <div className="tooltip" data-tip="sonnig">
           <IconSun />
         </div>
       )
-    case 'semi-shade':
+    case "semi-shade":
       return (
         <div className="tooltip" data-tip="halbschattig">
           <IconSunMoon />
         </div>
       )
-    case 'shade':
+    case "shade":
       return (
         <div className="tooltip" data-tip="schattig">
+          <IconMoon />
+        </div>
+      )
+    case "light-shade":
+      return (
+        <div className="tooltip" data-tip="Lichter Schatten">
           <IconMoon />
         </div>
       )
@@ -81,22 +87,22 @@ const Soil: FC<Props> = ({ plant }) => (
   <div className="stat">
     <div className="stat-title">Boden</div>
     <div className="stat-value">
-      {plant.data.soil.includes('moist') && (
+      {plant.data.soil.includes("moist") && (
         <div className="tooltip" data-tip="feucht">
           <IconDropletHalf2Filled />
         </div>
       )}
-      {plant.data.soil.includes('dry') && (
+      {plant.data.soil.includes("dry") && (
         <div className="tooltip" data-tip="trocken">
           <IconCactus />
         </div>
       )}
-      {plant.data.soil.includes('normal') && (
+      {plant.data.soil.includes("normal") && (
         <div className="tooltip" data-tip="normal">
           <IconDroplet />
         </div>
       )}
-      {plant.data.soil.includes('wet') && (
+      {plant.data.soil.includes("wet") && (
         <div className="tooltip" data-tip="nass">
           <IconDropletFilled />
         </div>

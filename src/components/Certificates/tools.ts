@@ -1,6 +1,6 @@
-import { __, add, always, cond, equals, gt, lte, max, T, times } from 'ramda'
-import { pipe } from 'effect'
-import * as A from 'effect/Array'
+import { __, add, always, cond, equals, gt, lte, max, T, times } from "ramda"
+import { pipe } from "effect"
+import * as A from "effect/Array"
 
 const CERTIFICATES_PER_YEAR_2021 = 1_571_000_000
 const AVERAGE_EMISSION_2018_TO_2020 = 43_003_515 / 0.022
@@ -16,7 +16,7 @@ export const sumFromToWith =
   (from: number) => (to: number) => (f: (x: number) => number) =>
     pipe(times(add(from), to - from + 1), A.map(f), A.reduce(0, add))
 
-export const formatNumber = Intl.NumberFormat('de-DE', {
+export const formatNumber = Intl.NumberFormat("de-DE", {
   // no digits after the decimal point
   maximumFractionDigits: 0,
 }).format
@@ -26,7 +26,7 @@ export const decreaseInNewCertificates: (year: number) => number = cond([
   [
     equals(2024),
     always(
-      DECREASE_2024 + DECREASE_OF_NEW_CERTIFICATES_PER_YEAR[2024] - SEA_TRAFFIC
+      DECREASE_2024 + DECREASE_OF_NEW_CERTIFICATES_PER_YEAR[2024] - SEA_TRAFFIC,
     ),
   ],
   [
@@ -43,13 +43,13 @@ export const newCertificates = (year: number) =>
   max(
     0,
     CERTIFICATES_PER_YEAR_2021 -
-      sumFromToWith(2021)(year)(decreaseInNewCertificates)
+      sumFromToWith(2021)(year)(decreaseInNewCertificates),
   )
 
 export const totalCertificates = (
   startYear: number,
-  startCertificates: number
+  startCertificates: number,
 ) =>
   formatNumber(
-    startCertificates + sumFromToWith(startYear)(2100)(newCertificates)
+    startCertificates + sumFromToWith(startYear)(2100)(newCertificates),
   )

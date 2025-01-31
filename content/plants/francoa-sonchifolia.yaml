@@ -1,0 +1,25 @@
+name:
+  latin: Francoa sonchifolia
+  german: Francoa sonchifolia
+height: 60
+soil:
+  - wet
+sunExposure:
+  - full
+  - semi-shade
+hardiness: hardy
+germination:
+  dark: false
+  light: true
+flowerColor:
+  - white
+foliageColor: green
+lifecycle: perennial
+sowingTime:
+  - august
+sowingScheme: D
+floweringSeason:
+  - july
+  - august
+  - september
+supplier: jelitto

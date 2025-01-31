@@ -1,5 +1,5 @@
-import { pipe } from 'effect'
-import { Field, Formik } from 'formik'
+import { pipe } from "effect"
+import { Field, Formik } from "formik"
 
 type HeatpumpFormValues = {
   co2PricePerTon: number
@@ -151,14 +151,14 @@ export const Heatpump = () => {
                 </td>
                 <td>
                   {formatEuros(
-                    yearlyCompensationCostCo2HeatpumpGasheat(values)
+                    yearlyCompensationCostCo2HeatpumpGasheat(values),
                   )}
                 </td>
                 <td>
                   {pipe(
                     values,
                     totalCompensationCostCo2HeatpumpGasheat,
-                    formatEuros
+                    formatEuros,
                   )}
                 </td>
               </tr>
@@ -166,42 +166,42 @@ export const Heatpump = () => {
           </table>
           <h2>Fazit</h2>
           <p>
-            Die Wärmepumpe kostet{' '}
-            {pipe(values, totalCostsHeatpump, formatEuros)} und stößt{' '}
+            Die Wärmepumpe kostet{" "}
+            {pipe(values, totalCostsHeatpump, formatEuros)} und stößt{" "}
             {pipe(values, totalCo2Heatpump, formatTonneCo2)} CO₂ aus. Wenn ich
             die Gasheizung nutze und den dadurch zusätzlich verursachten CO₂
-            Ausstoß von{' '}
-            {pipe(values, totalDifferenceCo2HeatpumpGasheat, formatTonneCo2)}{' '}
-            kompensieren möchte, kostet mich das insgesamt{' '}
+            Ausstoß von{" "}
+            {pipe(values, totalDifferenceCo2HeatpumpGasheat, formatTonneCo2)}{" "}
+            kompensieren möchte, kostet mich das insgesamt{" "}
             {formatEuros(
               totalCompensationCostCo2HeatpumpGasheat(values) +
-                totalCostsGasheat(values)
+                totalCostsGasheat(values),
             )}
-            . Ich kann also{' '}
-            {pipe(values, savingsHeatpumpGasheatWithSameEmission, formatEuros)}{' '}
+            . Ich kann also{" "}
+            {pipe(values, savingsHeatpumpGasheatWithSameEmission, formatEuros)}{" "}
             sparen und trotzdem so "wenig" CO₂ ausstoßen wie mit der Wärmepumpe.
           </p>
           <p>
             Würde ich die Ersparnis vollständig für die Kompensation von CO₂
-            ausgeben, könnte ich zusätzlich{' '}
+            ausgeben, könnte ich zusätzlich{" "}
             {pipe(values, compensationWithSavings, formatTonneCo2)} CO₂
             kompensieren. Gegenüber der Nutzung einer Wärmepumpe würde ich also
-            den CO₂ Ausstoß um Faktor{' '}
+            den CO₂ Ausstoß um Faktor{" "}
             {pipe(
               values,
               compensationFactor,
-              Intl.NumberFormat('de-DE', {
-                style: 'decimal',
+              Intl.NumberFormat("de-DE", {
+                style: "decimal",
                 maximumFractionDigits: 2,
-              }).format
-            )}{' '}
-            reduzieren. Für das gleiche Geld würde ich, anstatt{' '}
+              }).format,
+            )}{" "}
+            reduzieren. Für das gleiche Geld würde ich, anstatt{" "}
             {pipe(values, totalCo2Heatpump, formatTonneCo2)} CO₂ mit der
-            Wärmepumpe auszustoßen, mit der Gasheizung den Ausstoß von{' '}
+            Wärmepumpe auszustoßen, mit der Gasheizung den Ausstoß von{" "}
             {pipe(
               compensationWithSavings(values) - totalCo2Gasheat(values),
-              formatTonneCo2
-            )}{' '}
+              formatTonneCo2,
+            )}{" "}
             CO₂ verhindern!
           </p>
         </>
@@ -214,14 +214,14 @@ const compensationFactor = (values: HeatpumpFormValues) =>
   compensationWithSavings(values) / totalDifferenceCo2HeatpumpGasheat(values)
 
 const formatTonneCo2 = (value: number) =>
-  `${Intl.NumberFormat('de-DE', {
-    style: 'decimal',
+  `${Intl.NumberFormat("de-DE", {
+    style: "decimal",
     maximumFractionDigits: 2, // Adjust this as needed for decimal places
   }).format(value)} t`
 
 const formatEuros = (value: number) =>
-  Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(
-    value
+  Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(
+    value,
   )
 
 const compensationWithSavings = (values: HeatpumpFormValues) =>

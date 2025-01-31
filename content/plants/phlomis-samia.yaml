@@ -1,0 +1,20 @@
+name:
+  german: Phlomis samia
+  latin: Phlomis samia
+supplier: jelitto
+height: 150
+soil:
+  - dry
+sunExposure:
+  - full
+  - semi-shade
+hardiness: hardy
+flowerColor:
+  - pink
+foliageColor: green
+floweringSeason:
+  - july
+  - august
+  - september
+lifecycle: perennial
+sowingScheme: D

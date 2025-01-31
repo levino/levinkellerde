@@ -1,10 +1,10 @@
 ---
-import type { GetStaticPaths } from 'astro'
-import { getCollection, getEntry, render } from 'astro:content'
-import Layout from '@levino/shipyard-base/layouts/Page.astro'
+import type { GetStaticPaths } from "astro"
+import { getCollection, getEntry, render } from "astro:content"
+import Layout from "@levino/shipyard-base/layouts/Page.astro"
 
 export const getStaticPaths = (async () => {
-  const beds = await getCollection('beds')
+  const beds = await getCollection("beds")
   const bedsWithPlants = await Promise.all(
     beds.map(async (bed) => {
       const plants = await Promise.all(
@@ -18,8 +18,8 @@ export const getStaticPaths = (async () => {
   )
   return bedsWithPlants.map((bed) => ({
     params: {
-      slug: bed.id.split('/').slice(1).join('/'),
-      locale: bed.id.split('/')[0],
+      slug: bed.id.split("/").slice(1).join("/"),
+      locale: bed.id.split("/")[0],
     },
     props: { entry: bed },
   }))

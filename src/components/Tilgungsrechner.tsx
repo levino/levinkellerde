@@ -1,7 +1,7 @@
-import React from 'react'
-import { getLoanPlan, type LoansSpecs } from '../tools/calculator'
-import { pipe } from 'fp-ts/lib/function'
-import { Field, Formik } from 'formik'
+import React from "react"
+import { getLoanPlan, type LoansSpecs } from "../tools/calculator"
+import { pipe } from "fp-ts/lib/function"
+import { Field, Formik } from "formik"
 
 type Runtime = 10 | 15 | 20 | 25 | 30 | 35
 interface FormValues {
@@ -29,7 +29,7 @@ export const Tilgungsrechner: React.FC = () => {
           loans: [
             { ...kfwLoan, runtime: kfwRuntime },
             {
-              name: 'Bank',
+              name: "Bank",
               interestRates: [
                 { from: 0, to: 100, rate: bankInterestRate / 100 },
               ],
@@ -136,13 +136,13 @@ export const Tilgungsrechner: React.FC = () => {
   )
 }
 
-const euro = new Intl.NumberFormat('de-DE', {
-  style: 'currency',
-  currency: 'EUR',
+const euro = new Intl.NumberFormat("de-DE", {
+  style: "currency",
+  currency: "EUR",
 })
 
 const kfwLoan = {
-  name: 'KfW',
+  name: "KfW",
   interestRates: [
     {
       from: 0,

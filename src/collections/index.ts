@@ -1,8 +1,8 @@
-import { defineCollection, reference, z } from 'astro:content'
-import { vegetablesSchema } from './vegetableSchema'
-import { file, glob } from 'astro/loaders'
-import { plantSchema } from './plantSchema'
-import { parse as parseYaml } from 'yaml'
+import { defineCollection, reference, z } from "astro:content"
+import { vegetablesSchema } from "./vegetableSchema"
+import { file, glob } from "astro/loaders"
+import { plantSchema } from "./plantSchema"
+import { parse as parseYaml } from "yaml"
 
 const supplierSchema = z.object({
   name: z.string(),
@@ -12,50 +12,50 @@ const supplierSchema = z.object({
 export const collections = {
   plants: defineCollection({
     loader: glob({
-      pattern: '*.yaml',
-      base: './content/plants',
+      pattern: "*.yaml",
+      base: "./content/plants",
     }),
     schema: plantSchema,
   }),
   suppliers: defineCollection({
     loader: glob({
-      pattern: '**/*.yaml',
-      base: './content/suppliers',
+      pattern: "**/*.yaml",
+      base: "./content/suppliers",
     }),
     schema: supplierSchema,
   }),
   plantDescriptions: defineCollection({
     loader: glob({
-      pattern: '**/*.md',
-      base: './content/plantDescriptions',
+      pattern: "**/*.md",
+      base: "./content/plantDescriptions",
     }),
     schema: z.object({
-      plant: reference('plants'),
+      plant: reference("plants"),
     }),
   }),
   beds: defineCollection({
     loader: glob({
-      pattern: '**/*.md',
-      base: './content/beds',
+      pattern: "**/*.md",
+      base: "./content/beds",
     }),
     schema: z.object({
-      plants: z.array(reference('plants')),
+      plants: z.array(reference("plants")),
       name: z.string(),
     }),
   }),
   vegetables: defineCollection({
     loader: glob({
-      pattern: '**/*.yaml',
-      base: './content/vegetables',
+      pattern: "**/*.yaml",
+      base: "./content/vegetables",
     }),
     schema: vegetablesSchema,
   }),
   vegetableStock: defineCollection({
     schema: z.object({
-      vegetable: reference('vegetables'),
+      vegetable: reference("vegetables"),
       inStock: z.boolean(),
     }),
-    loader: file('./content/vegetableStock.yaml', {
+    loader: file("./content/vegetableStock.yaml", {
       parser: (text) =>
         Object.entries(parseYaml(text)).map(([vegetable, inStock], id) => ({
           vegetable,
@@ -66,10 +66,10 @@ export const collections = {
   }),
   plantStock: defineCollection({
     schema: z.object({
-      plant: reference('plants'),
+      plant: reference("plants"),
       inStock: z.boolean(),
     }),
-    loader: file('./content/plantStock.yaml', {
+    loader: file("./content/plantStock.yaml", {
       parser: (text) =>
         Object.entries(parseYaml(text)).map(([plant, inStock], id) => ({
           plant,

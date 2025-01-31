@@ -1,20 +1,20 @@
 ---
-import Layout from '@levino/shipyard-base/layouts/Page.astro'
-import type { GetStaticPaths } from 'astro'
-import { getCollection } from 'astro:content'
+import Layout from "@levino/shipyard-base/layouts/Page.astro"
+import type { GetStaticPaths } from "astro"
+import { getCollection } from "astro:content"
 
-const beds = await getCollection('beds')
+const beds = await getCollection("beds")
 
 export const getStaticPaths = (() => {
   return [
     {
       params: {
-        locale: 'de',
+        locale: "de",
       },
     },
     {
       params: {
-        locale: 'en',
+        locale: "en",
       },
     },
   ]

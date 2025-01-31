@@ -1,21 +1,21 @@
 ---
-import Layout from '@levino/shipyard-base/layouts/Page.astro'
-import type { GetStaticPaths } from 'astro'
-import { prop, map, groupBy, path, flatten } from 'ramda'
-import { pipe } from 'fp-ts/lib/function'
-import { getCollection } from 'astro:content'
-import { MONTHS_DE, MONTHS_EN } from '@levino/shipyard-base'
+import Layout from "@levino/shipyard-base/layouts/Page.astro"
+import type { GetStaticPaths } from "astro"
+import { prop, map, groupBy, path, flatten } from "ramda"
+import { pipe } from "fp-ts/lib/function"
+import { getCollection } from "astro:content"
+import { MONTHS_DE, MONTHS_EN } from "@levino/shipyard-base"
 export const getStaticPaths = (() => {
   return [
     {
       params: {
-        locale: 'de',
+        locale: "de",
       },
     },
   ]
 }) satisfies GetStaticPaths
 
-const vegetables = await getCollection('vegetables').then((vegetables) =>
+const vegetables = await getCollection("vegetables").then((vegetables) =>
   vegetables.map(
     ({
       id,
@@ -23,11 +23,11 @@ const vegetables = await getCollection('vegetables').then((vegetables) =>
         sowing,
         name: { de: name },
       },
-    }) => ({ sowing, name, link: `./vegetables/${id}` })
-  )
+    }) => ({ sowing, name, link: `./vegetables/${id}` }),
+  ),
 )
 
-const plants = await getCollection('plants', path(['data', 'toSow'])).then(
+const plants = await getCollection("plants", path(["data", "toSow"])).then(
   (plants) =>
     plants.map(
       ({
@@ -36,14 +36,14 @@ const plants = await getCollection('plants', path(['data', 'toSow'])).then(
           sowingTime,
           name: { latin: name },
         },
-      }) => ({ sowing: sowingTime, name, link: `./plants/${id}` })
-    )
+      }) => ({ sowing: sowingTime, name, link: `./plants/${id}` }),
+    ),
 )
 const plantsBySowingMonth = pipe(
   vegetables.concat(plants),
   map((plant) => plant.sowing.map((sowing) => ({ ...plant, sowing }))),
   flatten,
-  groupBy(prop('sowing'))
+  groupBy(prop("sowing")),
 )
 ---
 

@@ -1,9 +1,9 @@
-import { CheckIcon, Cross2Icon } from '@radix-ui/react-icons'
-import type { CollectionEntry } from 'astro:content'
-import type { FC } from 'react'
+import { CheckIcon, Cross2Icon } from "@radix-ui/react-icons"
+import type { CollectionEntry } from "astro:content"
+import type { FC } from "react"
 
 export const PlantTable: FC<{
-  plants: CollectionEntry<'plants'>[]
+  plants: CollectionEntry<"plants">[]
   caption: string
 }> = ({ plants, caption }) => (
   <table className="table">

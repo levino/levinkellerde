@@ -1,12 +1,12 @@
-import { add, times } from 'ramda'
-import { pipe } from 'effect'
-import * as A from 'effect/Array'
+import { add, times } from "ramda"
+import { pipe } from "effect"
+import * as A from "effect/Array"
 import {
   decreaseInNewCertificates,
   formatNumber,
   newCertificates,
   sumFromToWith,
-} from './tools'
+} from "./tools"
 
 interface CertificateTableProps {
   initialCertificates: number
@@ -40,11 +40,11 @@ export const CertificateTable: React.FC<CertificateTableProps> = ({
               <td>
                 {formatNumber(
                   initialCertificates +
-                    sumFromToWith(startYear)(year)(newCertificates)
+                    sumFromToWith(startYear)(year)(newCertificates),
                 )}
               </td>
             </tr>
-          ))
+          )),
         )}
       </tbody>
     </table>

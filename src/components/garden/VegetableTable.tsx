@@ -1,8 +1,8 @@
-import type { CollectionEntry } from 'astro:content'
-import type { FC } from 'react'
+import type { CollectionEntry } from "astro:content"
+import type { FC } from "react"
 
 export const VegetableTable: FC<{
-  vegetables: CollectionEntry<'vegetables'>[]
+  vegetables: CollectionEntry<"vegetables">[]
   caption: string
 }> = ({ vegetables, caption }) => (
   <table className="table">

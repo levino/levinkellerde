@@ -1,13 +1,13 @@
 ---
-import Layout from '@levino/shipyard-base/layouts/Page.astro'
-import { getCollection } from 'astro:content'
-import { flatten } from 'ramda'
+import Layout from "@levino/shipyard-base/layouts/Page.astro"
+import { getCollection } from "astro:content"
+import { flatten } from "ramda"
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
-  const vegs = await getCollection('vegetables')
+  const vegs = await getCollection("vegetables")
   return flatten(
     vegs.map((entry) =>
-      ['en', 'de'].map((locale) => ({
+      ["en", "de"].map((locale) => ({
         params: { slug: entry.id, locale },
         props: { entry },
       })),

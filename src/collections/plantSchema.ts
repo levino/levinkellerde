@@ -1,10 +1,10 @@
-import { reference, type SchemaContext, z } from 'astro:content'
+import { reference, type SchemaContext, z } from "astro:content"
 
-import { MONTHS_EN } from '@levino/shipyard-base'
+import { MONTHS_EN } from "@levino/shipyard-base"
 
 const months = z.enum(MONTHS_EN)
 
-const SOWING_SCHEMAS = ['A', 'B', 'C', 'D'] as const
+const SOWING_SCHEMAS = ["A", "B", "C", "D"] as const
 
 type month = (typeof MONTHS_EN)[number]
 
@@ -14,9 +14,11 @@ export const plantSchema = ({ image }: SchemaContext) =>
       name: z.object({ latin: z.string(), german: z.string() }),
       description: z.string().optional(),
       height: z.number(),
-      soil: z.array(z.enum(['moist', 'dry', 'normal', 'wet'])),
-      sunExposure: z.array(z.enum(['full', 'semi-shade', 'shade'])),
-      hardiness: z.enum(['hardy', 'tender']),
+      soil: z.array(z.enum(["moist", "dry", "normal", "wet"])),
+      sunExposure: z.array(
+        z.enum(["full", "semi-shade", "shade", "light-shade"]),
+      ),
+      hardiness: z.enum(["hardy", "tender"]),
       spread: z.number().optional(),
       germination: z
         .object({
@@ -27,23 +29,24 @@ export const plantSchema = ({ image }: SchemaContext) =>
         .default({ dark: false, light: false }),
       flowerColor: z.array(
         z.enum([
-          'wine-red',
-          'red',
-          'blue',
-          'yellow',
-          'white',
-          'pink',
-          'green',
-          'brown',
-          'orange',
-          'violet',
-          'rose',
-          'black',
-        ])
+          "wine-red",
+          "red",
+          "blue",
+          "yellow",
+          "white",
+          "pink",
+          "green",
+          "brown",
+          "orange",
+          "violet",
+          "rose",
+          "black",
+          "purple",
+        ]),
       ),
       toSow: z.boolean().default(true),
-      foliageColor: z.enum(['green', 'red', 'silver']),
-      lifecycle: z.enum(['annual', 'perennial', 'biennial', 'shrub', 'tree']),
+      foliageColor: z.enum(["green", "red", "silver", "gold"]),
+      lifecycle: z.enum(["annual", "perennial", "biennial", "shrub", "tree"]),
       sowingTime: z.array(months).optional(),
       sowingScheme: z.enum(SOWING_SCHEMAS).optional(),
       floweringSeason: z.array(months),
@@ -52,17 +55,17 @@ export const plantSchema = ({ image }: SchemaContext) =>
           z.object({
             src: image(),
             alt: z.string(),
-          })
+          }),
         )
         .optional(),
       inStock: z.boolean().default(false),
-      supplier: reference('suppliers'),
+      supplier: reference("suppliers"),
     })
     .refine(
       ({ sowingTime, sowingScheme }) => sowingTime || sowingScheme,
-      'You need to either set a `sowingTime` or a `sowingScheme`.'
+      "You need to either set a `sowingTime` or a `sowingScheme`.",
     )
-    .transform(({ sowingTime, sowingScheme: sowingScheme, ...data }) => ({
+    .transform(({ sowingTime, sowingScheme, ...data }) => ({
       ...data,
       ...(sowingTime
         ? { sowingTime }
@@ -70,16 +73,16 @@ export const plantSchema = ({ image }: SchemaContext) =>
     }))
 
 const sowingSchemeToSowingTime = (
-  sowingScheme: (typeof SOWING_SCHEMAS)[number]
+  sowingScheme: (typeof SOWING_SCHEMAS)[number],
 ): month[] => {
   switch (sowingScheme) {
-    case 'A':
-      return ['september', 'october']
-    case 'B':
-      return ['february', 'march', 'april', 'may']
-    case 'C':
-      return ['march', 'april', 'may', 'june']
-    case 'D':
-      return ['april', 'may', 'june']
+    case "A":
+      return ["september", "october"]
+    case "B":
+      return ["february", "march", "april", "may"]
+    case "C":
+      return ["march", "april", "may", "june"]
+    case "D":
+      return ["april", "may", "june"]
   }
 }

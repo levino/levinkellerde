@@ -1,0 +1,23 @@
+name:
+  latin: Cimicifuga ramosa 'Atropurpurea'
+  german: September-Silberkerze
+height: 200
+soil:
+  - normal
+sunExposure:
+  - semi-shade
+hardiness: hardy
+germination:
+  dark: false
+  light: true
+flowerColor:
+  - white
+foliageColor: red
+lifecycle: annual
+sowingTime:
+  - august
+sowingScheme: A
+floweringSeason:
+  - september
+inStock: true
+supplier: jelitto

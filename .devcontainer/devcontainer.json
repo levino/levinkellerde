@@ -1,27 +1,24 @@
 {
-  "name": "Node.js & TypeScript",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
-  "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {}
-  },
-  "postCreateCommand": "npm install",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "unifiedjs.vscode-mdx",
-        "streetsidesoftware.code-spell-checker",
-        "astro-build.astro-vscode",
-        "bradlc.vscode-tailwindcss",
-        "streetsidesoftware.code-spell-checker-german",
-        "esbenp.prettier-vscode"
-      ],
-      "settings": {
-        "terminal.integrated.defaultProfile.linux": "zsh",
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "[astro]": {
-          "editor.defaultFormatter": "astro-build.astro-vscode"
-        }
-      }
-    }
-  }
+	"name": "Node.js & TypeScript",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {}
+	},
+	"postCreateCommand": "npm install",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"unifiedjs.vscode-mdx",
+				"streetsidesoftware.code-spell-checker",
+				"astro-build.astro-vscode",
+				"bradlc.vscode-tailwindcss",
+				"streetsidesoftware.code-spell-checker-german",
+				"biomejs.biome"
+			],
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "zsh",
+				"editor.defaultFormatter": "biomejs.biome"
+			}
+		}
+	}
 }

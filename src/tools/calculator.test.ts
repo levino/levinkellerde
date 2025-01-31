@@ -1,5 +1,5 @@
-import { describe, expect, test } from 'vitest'
-import { getLoanPlan, interest, loanData } from './calculator'
+import { describe, expect, test } from "vitest"
+import { getLoanPlan, interest, loanData } from "./calculator"
 const interestRates = [
   {
     from: 0,
@@ -9,7 +9,7 @@ const interestRates = [
   { from: 10, to: 25, rate: 0.0087 },
 ]
 
-describe('Financial helper functions', () => {
+describe("Financial helper functions", () => {
   test.each([
     {
       runtime: 10,
@@ -21,25 +21,25 @@ describe('Financial helper functions', () => {
       annuity: 1135.29507423021,
       expected: 250_000,
     },
-  ])('annuity payment', ({ runtime, annuity, expected }) =>
+  ])("annuity payment", ({ runtime, annuity, expected }) =>
     expect(
       loanData({
         runtime,
         annuity,
         interestRates,
-      }).amount
-    ).toBeCloseTo(expected, 5)
+      }).amount,
+    ).toBeCloseTo(expected, 5),
   )
-  test('totalInterest', () =>
+  test("totalInterest", () =>
     expect(
-      interest({ runtime: 10, annuity: 833.7535416568145, interestRates })
+      interest({ runtime: 10, annuity: 833.7535416568145, interestRates }),
     ).toBeCloseTo(50.42, 2))
   test.each([
     {
       input: {
         loans: [
           {
-            name: 'hansi',
+            name: "hansi",
             maxAmount: 50_000,
             interestRates,
             runtime: 10,
@@ -63,13 +63,13 @@ describe('Financial helper functions', () => {
       input: {
         loans: [
           {
-            name: 'hansi',
+            name: "hansi",
             maxAmount: 50_000,
             interestRates,
             runtime: 10,
           },
           {
-            name: 'hansi',
+            name: "hansi",
             interestRates: [
               {
                 from: 0,
@@ -99,7 +99,7 @@ describe('Financial helper functions', () => {
         amount: 293_540.34611,
       },
     },
-  ])('multipleLoans', ({ input, expected }) => {
+  ])("multipleLoans", ({ input, expected }) => {
     const result = getLoanPlan(input)
     result.loans.forEach((loan, index) => {
       const expectedLoan = expected.loans[index]
