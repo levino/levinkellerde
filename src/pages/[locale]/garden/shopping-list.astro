@@ -18,17 +18,21 @@ export const getStaticPaths = (() => {
 const outOfStock = ({ data: { inStock } }: { data: { inStock: boolean } }) =>
   !inStock
 
-const plants = await getCollection('plants', outOfStock).then((plants) =>
-  plants.map(
-    ({
-      id,
-      data: {
-        supplier: { id: supplierId },
-        name: { german: name },
-      },
-    }) => ({ supplierId, name, link: `./plants/${id}` })
+const plants = await getCollection('plantStock', outOfStock)
+  .then((plants) =>
+    plants.map(({ data: { plant } }) =>
+      getEntry(plant).then(
+        ({
+          id,
+          data: {
+            supplier: { id: supplierId },
+            name: { german: name },
+          },
+        }) => ({ supplierId, name, link: `./plants/${id}` })
+      )
+    )
   )
-)
+  .then((promises) => Promise.all(promises))
 
 const vegetables = await getCollection('vegetableStock', outOfStock)
   .then((plants) =>
