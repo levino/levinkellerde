@@ -1,0 +1,29 @@
+name:
+  latin: Callistephus chinensis
+  german: Sommeraster
+height: 100
+soil:
+  - normal
+  - dry
+sunExposure:
+  - full
+hardiness: tender
+germination:
+  dark: true
+  light: false
+flowerColor:
+  - red
+toSow: true
+foliageColor: green
+lifecycle: perennial
+sowingTime:
+  - march
+  - april
+  - may
+sowingScheme: D
+floweringSeason:
+  - july
+  - august
+  - september
+  - october
+supplier: bingenheimer
