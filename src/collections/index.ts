@@ -64,4 +64,18 @@ export const collections = {
         })),
     }),
   }),
+  plantStock: defineCollection({
+    schema: z.object({
+      plant: reference('plants'),
+      inStock: z.boolean(),
+    }),
+    loader: file('./content/plantStock.yaml', {
+      parser: (text) =>
+        Object.entries(parseYaml(text)).map(([plant, inStock], id) => ({
+          plant,
+          inStock,
+          id,
+        })),
+    }),
+  }),
 }
