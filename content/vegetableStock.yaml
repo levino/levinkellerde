@@ -1,8 +1,7 @@
 ---
-kohlrabi: true
-artichoke: false
+aubergine: true
 beetroot: true
-broad-bean: true
+broad-beans: true
 broccoli: true
 brussel-sprouts: true
 cabbage: true
@@ -11,17 +10,20 @@ cauliflower: true
 celeriac: true
 celery: true
 chervil: true
-chili: false
+chilli: false
 corn-salad: true
+cucumber: false
 daikon: false
 dill: true
-eggplant: true
 endive: true
 fennel: true
-flower-sprouts: true
 french-bean: false
 garden-cress: true
+garlic: true
+globe-artichoke: true
 kale: true
+kalettes: true
+kohlrabi: true
 melon: false
 okra: false
 onion: true
@@ -36,8 +38,11 @@ runner-bean: true
 salad: true
 salad-rocket: true
 savoy: true
+spinach: true
 spring-onion: true
+summer-leek: false
 sweet-corn: true
 tatsoi: true
 tomato: false
 white-radish: true
+winter-leek: false

@@ -1,0 +1,16 @@
+harvest:
+  - july
+  - august
+  - september
+name:
+  de: Gurke
+  latin: Cucumis sativus
+planting:
+  - march
+  - april
+  - may
+sowing:
+  - february
+  - march
+  - april
+supplier: culinaris
