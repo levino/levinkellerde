@@ -1,30 +1,29 @@
 name:
-  latin: Petunia hybrida
-  german: Aufrechte Beet-Petunie
-height: 40
+  latin: Orlaya grandiflora
+  german: Großblütige Strahlendolde
+height: 70
 soil:
   - normal
 sunExposure:
   - full
 hardiness: hardy
+germination:
+  dark: false
+  light: true
 flowerColor:
   - white
-  - blue
-  - violet
-  - yellow
-  - red
-  - pink
-  - orange
-toSow: false
 foliageColor: green
 lifecycle: annual
 sowingTime:
-  - january
   - february
   - march
+  - april
+  - may
+  - september
+  - october
+sowingScheme: C
 floweringSeason:
   - june
   - july
   - august
-  - september
 supplier: saatgut-vielfalt
