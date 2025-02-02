@@ -1,0 +1,19 @@
+flowerColor:
+  - purple
+floweringSeason:
+  - may
+  - june
+  - july
+foliageColor: green
+hardiness: hardy
+height: 100
+lifecycle: perennial
+name:
+  german: Borretsch
+  latin: Borago officinalis
+soil:
+  - normal
+sunExposure:
+  - full
+supplier: reinsaat
+sowingScheme: D

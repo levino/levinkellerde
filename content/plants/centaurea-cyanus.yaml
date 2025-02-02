@@ -1,0 +1,27 @@
+name:
+  latin: 'Centaurea cyanus'
+  german: 'Kornblume'
+description: "Centaurea cyanus, commonly known as cornflower or bachelor's button, is an annual plant with vibrant blue flowers. It prefers full sun and well-drained soil."
+height: 90
+soil:
+  - normal
+  - dry
+sunExposure:
+  - full
+hardiness: tender
+spread: 30
+germination:
+  dark: true
+  light: false
+flowerColor:
+  - blue
+foliageColor: green
+lifecycle: annual
+sowingTime:
+  - april
+  - may
+floweringSeason:
+  - june
+  - july
+  - august
+supplier: bingenheimer

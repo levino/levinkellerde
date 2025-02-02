@@ -1,3 +1,6 @@
+Here is the definition of a plant schema:
+
+```typescript
 import { reference, type SchemaContext, z } from 'astro:content'
 
 import { MONTHS_EN } from '@levino/shipyard-base'
@@ -84,3 +87,8 @@ const sowingSchemeToSowingTime = (
       return ['april', 'may', 'june']
   }
 }
+```
+
+The description should be in German.
+
+Please provide a bash command which I can paste in my zsh to create a yaml file with the latin name as kebab case as filename for the following plant in the folder ./content/plants. Please do not create entries which would not work like for images. I just need a command to paste, no variables, etc. please.

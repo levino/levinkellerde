@@ -1,0 +1,31 @@
+name:
+  latin: Antirrhinum majus
+  german: Löwenmäulchen Farbmischung
+description: Löwenmäulchen sind farbenfrohe Blumen, die in vielen Gärten zu finden sind.
+height: 60
+soil:
+  - normal
+sunExposure:
+  - full
+  - semi-shade
+hardiness: hardy
+spread: 30
+germination:
+  dark: false
+  light: true
+flowerColor:
+  - red
+  - yellow
+  - pink
+  - white
+foliageColor: green
+lifecycle: annual
+sowingTime:
+  - march
+  - april
+  - may
+floweringSeason:
+  - june
+  - july
+  - august
+supplier: bingenheimersaatgut

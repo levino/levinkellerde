@@ -1,0 +1,21 @@
+flowerColor:
+  - pink
+  - red
+floweringSeason:
+  - july
+  - august
+foliageColor: green
+hardiness: hardy
+height: 70
+inStock: false
+lifecycle: perennial
+name:
+  german: {{german}}
+  latin: {{latin}}
+soil:
+  - normal
+spread: 50
+sunExposure:
+  - full
+supplier: saatgut-vielfalt
+sowingScheme: D
