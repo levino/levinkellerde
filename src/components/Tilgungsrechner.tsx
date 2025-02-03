@@ -1,4 +1,4 @@
-import React from "react"
+import type React from "react"
 import { getLoanPlan, type LoansSpecs } from "../tools/calculator"
 import { pipe } from "fp-ts/lib/function"
 import { Field, Formik } from "formik"

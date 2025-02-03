@@ -80,7 +80,7 @@ export const Heatpump = () => {
           <table>
             <thead>
               <tr>
-                <th></th>
+                <th />
                 <th>Jährlich</th>
                 <th>Über {values.runtimeInYears} Jahre</th>
               </tr>
@@ -114,7 +114,7 @@ export const Heatpump = () => {
           <table>
             <thead>
               <tr>
-                <th></th>
+                <th />
                 <th>Jährlich</th>
                 <th>Über {values.runtimeInYears} Jahre</th>
               </tr>
@@ -255,7 +255,8 @@ const NumberInput = ({
   label: string
   unit: string
 }) => (
-  <label className="form-control">
+  // biome-ignore lint/a11y/noLabelWithoutControl: The Field renders an input.
+<label className="form-control">
     <div className="label">
       <span className="label-text">{label}</span>
     </div>

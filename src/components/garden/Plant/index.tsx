@@ -1,4 +1,4 @@
-import { type CollectionEntry } from "astro:content"
+import type { CollectionEntry } from "astro:content"
 import { MONTHS_DE, MONTHS_EN } from "@levino/shipyard-base"
 import type { FC, PropsWithChildren } from "react"
 import {
@@ -12,6 +12,7 @@ import {
   IconSun,
   IconSunMoon,
 } from "@tabler/icons-react"
+import src from "@levino/shipyard-docs"
 type Props = { plant: CollectionEntry<"plants"> }
 
 export const Plant: FC<PropsWithChildren<Props>> = ({ plant, children }) => (
@@ -25,8 +26,8 @@ export const Plant: FC<PropsWithChildren<Props>> = ({ plant, children }) => (
     </div>
     {plant.data.images && (
       <div className="carousel aspect-[4/3] rounded-box">
-        {plant.data.images.map((image, index) => (
-          <div className="carousel-item aspect-[4/3]" key={index}>
+        {plant.data.images.map((image) => (
+          <div className="carousel-item aspect-[4/3]" key={image.src.src}>
             <img
               className="w-full object-cover"
               src={image.src.src}
@@ -46,6 +47,7 @@ const Sun: FC<Props> = ({ plant }) => (
     <div className="stat-title">Sonne</div>
     <div className="stat-value">
       {plant.data.sunExposure.map((sunExposure, key) => (
+        // biome-ignore lint/suspicious/noArrayIndexKey: Dunno what else to take here.
         <ExposureBadge key={key} sunExposure={sunExposure} />
       ))}
     </div>
@@ -111,25 +113,27 @@ const Soil: FC<Props> = ({ plant }) => (
   </div>
 )
 
-const Dimensions: FC<Props> = ({ plant }) => [
-  <div id="height" className="stat">
-    <div className="stat-title">Höhe</div>
-    <div className="stat-value">{plant.data.height} cm</div>
-  </div>,
-  <div id="spread" className="stat">
-    <div className="stat-title">Breite</div>
-    <div className="stat-value">{plant.data.spread} cm</div>
-  </div>,
-]
+const Dimensions: FC<Props> = ({ plant }) => (
+  <>
+    <div id="height" className="stat">
+      <div className="stat-title">Höhe</div>
+      <div className="stat-value">{plant.data.height} cm</div>
+    </div>
+    <div id="spread" className="stat">
+      <div className="stat-title">Breite</div>
+      <div className="stat-value">{plant.data.spread} cm</div>
+    </div>
+  </>
+)
 
 const PlantTable: FC<Props> = ({ plant }) => (
   <div className="p-4">
     <table className="w-full table-fixed border-collapse rounded border border-slate-400">
       <thead>
         <tr>
-          {MONTHS_DE.map((month, key) => (
+          {MONTHS_DE.map((month) => (
             <th
-              key={key}
+              key={month}
               className="border border-slate-400 py-2 text-center font-normal"
             >
               <span className="hidden md:block">{month.slice(0, 3)}</span>
@@ -140,27 +144,27 @@ const PlantTable: FC<Props> = ({ plant }) => (
       </thead>
       <tbody>
         <tr>
-          {MONTHS_EN.map((month, key) => {
+          {MONTHS_EN.map((month) => {
             if (plant.data.floweringSeason.includes(month)) {
               return (
-                <td key={key} className="border border-slate-400 py-2">
+                <td key={month} className="border border-slate-400 py-2">
                   <IconFlower className="mx-auto" />
                 </td>
               )
             }
-            return <td key={key} className="border border-slate-400 py-2" />
+            return <td key={month} className="border border-slate-400 py-2" />
           })}
         </tr>
         <tr>
-          {MONTHS_EN.map((month, key) => {
+          {MONTHS_EN.map((month) => {
             if (plant.data.sowingTime?.includes(month)) {
               return (
-                <td key={key} className="border border-slate-400 py-2">
+                <td key={month} className="border border-slate-400 py-2">
                   <IconSeeding className="mx-auto" />
                 </td>
               )
             }
-            return <td key={key} className="border border-slate-400 py-2" />
+            return <td key={month} className="border border-slate-400 py-2" />
           })}
         </tr>
       </tbody>

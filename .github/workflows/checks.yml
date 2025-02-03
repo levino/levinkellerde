@@ -18,7 +18,7 @@ jobs:
           node-version: 20
           cache: 'npm'
       - run: npm ci
-      - run: npx eslint .
+      - run: npx biome lint
   check-format:
     name: check format
     runs-on: ubuntu-latest
