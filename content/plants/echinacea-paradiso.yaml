@@ -1,0 +1,28 @@
+name:
+  latin: Echinacea-Hybride Paradiso
+  german: Hybrid-Sonnenhut (Bunte Mischung)
+height: 100
+soil:
+  - normal
+  - moist
+sunExposure:
+  - full
+hardiness: hardy
+spread: 50
+flowerColor:
+  - white
+  - yellow
+  - red
+  - pink
+  - orange
+toSow: true
+foliageColor: green
+lifecycle: perennial
+sowingScheme: D
+floweringSeason:
+  - july
+  - august
+  - september
+  - october
+inStock: true
+supplier: saatgut-vielfalt

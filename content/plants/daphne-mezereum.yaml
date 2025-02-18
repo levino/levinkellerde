@@ -1,0 +1,24 @@
+flowerColor:
+  - purple
+floweringSeason:
+  - march
+foliageColor: green
+germination:
+  dark: false
+  light: false
+hardiness: hardy
+height: 100
+lifecycle: shrub
+name:
+  german: Seidelbast
+  latin: Daphne Mezereum
+soil:
+  - normal
+sowingTime:
+  - march
+  - april
+spread: 20
+sunExposure:
+  - semi-shade
+  - light-shade
+supplier: eggert

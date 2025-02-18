@@ -1,0 +1,29 @@
+name:
+  latin: Orlaya grandiflora
+  german: Großblütige Strahlendolde
+height: 70
+soil:
+  - normal
+sunExposure:
+  - full
+hardiness: hardy
+germination:
+  dark: false
+  light: true
+flowerColor:
+  - white
+foliageColor: green
+lifecycle: annual
+sowingTime:
+  - february
+  - march
+  - april
+  - may
+  - september
+  - october
+sowingScheme: C
+floweringSeason:
+  - june
+  - july
+  - august
+supplier: saatgut-vielfalt
