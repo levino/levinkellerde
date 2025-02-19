@@ -13,7 +13,8 @@
         "astro-build.astro-vscode",
         "bradlc.vscode-tailwindcss",
         "streetsidesoftware.code-spell-checker-german",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "GitHub.vscode-pull-request-github"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "zsh",
