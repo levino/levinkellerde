@@ -10,10 +10,10 @@ Wer seine Wiese mit der Sense schneiden will, braucht vor allem hochwertiges Wer
 
 Zusätzlich zum persönlichen Werkzeug oben, benötigt man zumindest in der Gruppe auch **unbedingt** die folgenden Werkzeuge:
 
-- **Ein Dengelgerät.** Eine Sense ist schnell gekauft, aber was leider oft nicht gesagt wird, ist, dass man die Sense im Allgemeinen schon nach ca 4 bis 8 Stunden Einsatz das erste Mal dengeln muss. Insofern macht es keinen Sinn, eine Sense ohne Dengelgerät vorzuhalten. Man kann mit Amboss und Hammer arbeiten. Das ist aber sehr schwierig. Ich habe gute Erfahrung mit dem Schlagdengelapparat von Schröckenfux gemacht, vor allem, weil ich mir dazu die [Dengelbank](https://www.garten-geschenke.de/Dengelbank-Dengelstuhl) von garten-geschenke.de gekauft habe.
+- **Ein Dengelgerät.** Eine Sense ist schnell gekauft, aber was leider oft nicht gesagt wird ist, dass man die Sense im Allgemeinen schon nach ca. 4 bis 8 Stunden Einsatz das erste Mal dengeln muss. Insofern macht es keinen Sinn, eine Sense ohne Dengelgerät vorzuhalten. Man kann mit Amboss und Hammer arbeiten. Das ist aber sehr schwierig. Ich habe gute Erfahrung mit dem Schlagdengelapparat von Schröckenfux gemacht, vor allem, weil ich mir dazu die [Dengelbank](https://www.garten-geschenke.de/Dengelbank-Dengelstuhl) von garten-geschenke.de gekauft habe.
 - **Heurechen** in hinreichender Anzahl. Ich verwende Heurechen aus Holz und mit Plastik-(Nylon)-Zinken, die man austauschen kann. Diese sind leicht und damit geht die Arbeit gut von der Hand. Wenn man ein Zinken bricht, kann man ihn schnell erneuern.
 - **Heugabeln** ebenfalls in hinreichender Anzahl. Die hat man aber meistens.
-- **Schubkarre(n)** zum Wegbringen vom Mahdgut. Dieser Punkt sollte nicht unterschätzt werden! Es fallen erhebliche Mengen an organischem Material an. Der Entsorgungsweg sollte schon vor der Mahd gut geplant sein.
+- **Schubkarre(n)** zum Wegbringen des Mahdguts. Dieser Punkt sollte nicht unterschätzt werden! Es fallen erhebliche Mengen an organischem Material an. Der Entsorgungsweg sollte schon vor der Mahd gut geplant sein.
 
 ## Kreiselmäher
 
