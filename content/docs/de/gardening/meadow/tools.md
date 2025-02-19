@@ -17,4 +17,4 @@ Zusätzlich zum persönlichen Werkzeug oben, benötigt man zumindest in der Grup
 
 ## Kreiselmäher
 
-Wem die Arbeit mit der Sense zu anstrengend (oder wie mir für die Flächen zu langsam) ist, die oder der ist mit der Anschaffung eines Kreiselmähers gut beraten. Ich habe mir den [AS 585 KM](https://www.as-motor.de/produkt/as-585-km/) gekaut und bin damit sehr zufrieden. Ich vermiete oder verleihe den Mäher auch. Bitte sprechen Sie mich darauf an. Mit einem Kreiselmäher benötigt man ansonsten nur noch Heurechen, Heugabeln und Schubkarren.
+Wem die Arbeit mit der Sense zu anstrengend (oder wie mir für die Flächen zu langsam) ist, die oder der ist mit der Anschaffung eines Kreiselmähers gut beraten. Ich habe mir den [AS 585 KM](https://www.as-motor.de/produkt/as-585-km/) gekauft und bin damit sehr zufrieden. Ich vermiete oder verleihe den Mäher auch. Bitte sprechen Sie mich darauf an. Mit einem Kreiselmäher benötigt man ansonsten nur noch Heurechen, Heugabeln und Schubkarren.
